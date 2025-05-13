@@ -1,7 +1,9 @@
 import { Router } from "express";
-import { registerUser } from "../controllers/user.controller.js";
+import { registerUser,login, logoutuser } from "../controllers/user.controller.js";
 const userRouter = Router();
 
-userRouter.get('/register',registerUser);
+userRouter.post('/register',registerUser);             //  http://localhost:8000/api/v1/user/register
+userRouter.post('/login',login);                       // http://localhost:8000/api/v1/user/login
+userRouter.post('/logout',logoutuser)                  // http://localhost:8000/api/v1/user/logout     
 
 export default userRouter

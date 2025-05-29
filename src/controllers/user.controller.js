@@ -87,7 +87,7 @@ const login = asyncHandler( async (req,res)=>{
 
        const {refreshToken,accessToken} = await generateAccessAndRefereshTokens(user._id);
 
-       const logedinUser = await User.findById(user._id).select("-password -refreshToken");
+       const logedinUser = await User.findById(user._id).select("-password");
 
        const options = {
         httpOnly: true,

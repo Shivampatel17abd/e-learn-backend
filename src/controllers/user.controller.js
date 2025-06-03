@@ -35,6 +35,7 @@ const registerUser = asyncHandler( async (req,res)=>{
         $or:[{email},{username}]
     });
 
+
     if(existeingUser){
         throw new ApiError(409,"user with this email or username exist");
     }

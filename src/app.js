@@ -16,8 +16,11 @@ app.use(cookieParser());
 
 // Routers
 import userRouter from './routes/user.route.js';
-app.use('/api/v1/user',userRouter);
+import problemRouter from './routes/problem.route.js';
 
+
+app.use('/api/v1/user',userRouter);
+app.use('/api/v1/problem',problemRouter);
 
 
 
